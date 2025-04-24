@@ -1,0 +1,112 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yoga Prakasam Portfolio</title>
+    <link rel="stylesheet" href="port.css">
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <img src="YP LOGO@.webp" alt="Logo" class="logo">
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="Yoga RESUME.docx" download class="resume-btn">Download Resume</a></li>
+        </ul>
+        <div class="menu-toggle" id="mobile-menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </nav>
+    </header>
+
+    <section id="home" class="hero">
+      <div class="hero-content">
+        <img src="Yoga Professional Image.png" alt="Yoga Prakasam" class="profile-img">
+        <h1>Hi, I'm <span>Yoga Prakasam</span></h1>
+        <p>AI & Data Science Student | Web Developer | Data Analyst</p>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <h2>About Me</h2>
+      <p>I am an Artificial Intelligence & Data Science student with experience in Web Development, Data Analytics, and Visualization using tools like Power BI, Tableau, Excel, and SQL. I enjoy solving problems and building meaningful digital solutions.</p>
+    </section>
+
+    <section id="skills" class="section">
+      <h2>Skills</h2>
+      <ul class="skills-list">
+        <li>Python</li>
+        <li>HTML / CSS / JavaScript</li>
+        <li>SQL Server</li>
+        <li>Power BI</li>
+        <li>Tableau</li>
+        <li>Data Visualization</li>
+      </ul>
+    </section>
+
+    <section id="projects" class="section">
+      <h2>Projects</h2>
+      <ul class="project-list">
+        <li><a href="https://github.com/YogaPrakasam/ToDo-List" target="_blank"><strong>To-Do List</strong></a> - Task manager using JavaScript</li>
+        <li><a href="https://github.com/YogaPrakasam/Random-Number-Generator" target="_blank"><strong>Random Number Generator</strong></a> - Web-based randomizer</li>
+        <li><a href="https://github.com/YogaPrakasam/Excel-HR-Dashboard" target="_blank"><strong>Excel Dashboard</strong></a> - HR analytics</li>
+        <li><a href="https://github.com/YogaPrakasam/PowerBI-Electricity-Dashboard" target="_blank"><strong>Power BI Dashboard</strong></a> - Electricity production analytics</li>
+        <li><a href="https://github.com/YogaPrakasam/Tableau-GameSales-Dashboard" target="_blank"><strong>Tableau Dashboard</strong></a> - Video game sales</li>
+      </ul>
+    </section>
+
+    <section id="contact" class="section">
+      <h2>Contact</h2>
+      <p>Email: yogaprakasam07@gmail.com</p>
+      <p>Phone: 8838806288</p>
+      <p><a href="https://www.linkedin.com/in/yogaprakasam" target="_blank">LinkedIn Profile</a></p>
+    </section>
+<!--  --------------------------------------------------- -->
+    <section class="contact_form" id="contact_for">
+      <h2 class="heading">Contact <span>Me</span></h2>
+
+      <form onsubmit="sendEmail()">
+
+        <div class="input-group">
+          <div class="input-box">
+
+            <input type="text" name="Name" id="name" placeholder="Name" required>
+            <input type="email" name="Email" id="email" placeholder="Email" required>
+
+          </div>
+
+          <div class="input-box">
+            <input type="text" name="Phone Number" id="phonenumber" placeholder="Phone Number">
+            <input type="text" name="Subject" id="subject" placeholder="Subject">
+          </div>
+        </div>
+
+        <div class="input-group-2">
+          <textarea name="Your Message" id="message" cols="30" rows="10" placeholder="Your message"></textarea>
+          <input type="submit" value="Send Message" class="btn">
+        </div>
+      </form>
+
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+
+
+<!-- ---------------------------------------------------- -->
+    <footer>
+      <p>&copy; 2025 Yoga Prakasam. All Rights Reserved.</p>
+    </footer>
+
+    <script src="port.js"></script>
+  </body>
+  </html>
