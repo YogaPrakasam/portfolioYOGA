@@ -32,15 +32,15 @@ a {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background-color: #000000;
-  
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  /* background-color: #000000; */
+  background: linear-gradient(to right, #73acd5, #da5f5f);
+  /* box-shadow: 0 2px 10px rgba(0,0,0,0.05); */
   position: sticky;
   top: 0;
   z-index: 999;
 }
 .navbar ul li a{
-  color: white;
+  color: black;
 }
 
 
@@ -230,7 +230,7 @@ footer {
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   }
 .profile-img {
-    margin-left: 1%;
+    margin-left: 2%;
 }
 .hero{
   height: fit-content;
