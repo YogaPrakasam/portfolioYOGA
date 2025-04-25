@@ -181,10 +181,8 @@ input, textarea {
 }
 
 .btn {
-  /* background: #007BFF;
-  color: #fff; */
-  background-color: #000000;
-  color: white;
+  background:#007BFF;
+  color: black
   border: none;
   padding: 0.75rem;
   border-radius: 8px;
@@ -194,11 +192,9 @@ input, textarea {
 }
 
 .btn:hover {
-  /* background:   #898585ab; */
+  background-color: #000000;
+  color: white;
   
-  background:#007BFF;
-  color: black
-  ;
 }
 
 .section > p > a{
