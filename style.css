@@ -32,7 +32,8 @@ a {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background-color: #fff;
+  background-color: #c5c2c2ab;
+
   box-shadow: 0 2px 10px rgba(0,0,0,0.05);
   position: sticky;
   top: 0;
@@ -41,6 +42,7 @@ a {
 
 .logo {
   height: 50px;
+  border-radius: 50%;
 }
 
 .nav-links {
@@ -74,20 +76,26 @@ a {
 
 /* Hero Section */
 .hero {
+  height: 90vh;
   text-align: center;
   padding: 4rem 2rem;
-  background: linear-gradient(to right, #e3f2fd, #ffffff);
+  background: linear-gradient(to right, #73acd5, #d5ebfd);
 }
 
 .profile-img {
-  width: 150px;
+  width: 250px;
   border-radius: 50%;
   margin-bottom: 1rem;
-  margin-left: 45%;
+  margin-left: 40%;
 }
 
 .hero h1 span {
   color: #007BFF;
+}
+.hero  p{
+  margin: 25px;
+  font-style: italic;
+  font-weight: bold;
 }
 
 /* Section Styles */
@@ -95,6 +103,7 @@ a {
   padding: 3rem 2rem;
   max-width: 1000px;
   margin: auto;
+  
 }
 
 .section h2 {
@@ -115,13 +124,16 @@ a {
   background: #fff;
   padding: 0.8rem 1.2rem;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  box-shadow: 5px  5px 5px 5px rgba(8, 6, 6, 0.05);
 }
 
 /* Contact Form */
 .contact_form {
-  background: #f1f1f1;
+  /* background: #c5c2c2; */
+  /* background: linear-gradient(to right, #73acd5, #ffffff); */
+  background: linear-gradient(to right, #73acd5, #d5ebfd);
   padding: 3rem 2rem;
+
 }
 
 .input-group {
@@ -137,6 +149,7 @@ a {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  
 }
 
 .input-group-2 {
@@ -144,6 +157,7 @@ a {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  height: 220px;
 }
 
 input, textarea {
@@ -154,8 +168,10 @@ input, textarea {
 }
 
 .btn {
-  background: #007BFF;
-  color: #fff;
+  /* background: #007BFF;
+  color: #fff; */
+  background-color: rgb(51, 50, 50);
+  color: white;
   border: none;
   padding: 0.75rem;
   border-radius: 8px;
@@ -164,15 +180,21 @@ input, textarea {
 }
 
 .btn:hover {
-  background: #0056b3;
+  background: #0318bb;
 }
 
+.section > p > a{
+  color: darkblue;
+  font-weight: bold;
+}
 /* Footer */
 footer {
   text-align: center;
   padding: 2rem;
-  background: #fff;
-  color: #777;
+  background: #c5c2c2;
+  color: black;
+  font-weight: normal;
+ 
   font-size: 0.9rem;
 }
 
@@ -190,7 +212,10 @@ footer {
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   }
 .profile-img {
-    margin-left: 28%;
+    margin-left: 18%;
+}
+.hero{
+  height: fit-content;
 }
   .nav-links.active {
     display: flex;
