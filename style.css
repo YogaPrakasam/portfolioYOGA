@@ -231,7 +231,9 @@ footer {
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   }
 .profile-img {
-    margin-left: 2.7%;
+    margin-left: 3.5%;
+  width:200px;
+  height:200px
 }
 .hero{
   height: fit-content;
