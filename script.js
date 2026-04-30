@@ -8,10 +8,24 @@ mobileMenu.addEventListener('click', () => {
 });
 
 // Navigation Smooth Scroll
-const links = document.querySelectorAll('.nav-links a');
+const links = document.querySelectorAll('.nav-links a[href^="#"]');
 links.forEach(link => {
-  link.addEventListener('click', () => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
     navLinks.classList.remove('active');
+    
+    const targetId = link.getAttribute('href').substring(1);
+    const targetSection = document.getElementById(targetId);
+    
+    if (targetSection) {
+      const navbarHeight = document.querySelector('.navbar').offsetHeight;
+      const targetPosition = targetId === 'home' ? 0 : targetSection.offsetTop - navbarHeight;
+      
+      window.scrollTo({
+        top: targetPosition,
+        behavior: 'smooth'
+      });
+    }
   });
 });
 
@@ -101,7 +115,88 @@ form.addEventListener("submit", (e) => {
     sendMessageToTelegram();
 });
 
+// Certification Slider Navigation
+const certArrowLeft = document.getElementById('certArrowLeft');
+const certArrowRight = document.getElementById('certArrowRight');
+const certificationsGrid = document.getElementById('certificationsGrid');
 
+let currentSlide = 0;
+const totalCertifications = 7;
+let visibleCertifications = 3;
+let maxSlide = Math.max(0, totalCertifications - visibleCertifications);
+
+function updateSliderPosition() {
+    const certItems = certificationsGrid.querySelectorAll('.certification-item');
+    if (certItems.length === 0) return;
+    
+    const containerWidth = document.querySelector('.certifications-container').offsetWidth;
+    const padding = 120; // 60px left + 60px right padding
+    const visibleWidth = containerWidth - padding;
+    
+    const firstItemWidth = certItems[0].offsetWidth;
+    const gap = 32; // 2rem gap in pixels
+    const slideDistance = (firstItemWidth + gap) * currentSlide;
+    
+    certificationsGrid.style.transform = `translateX(-${slideDistance}px)`;
+    
+    // Update arrow states
+    certArrowLeft.style.opacity = currentSlide === 0 ? '0.5' : '1';
+    certArrowLeft.style.cursor = currentSlide === 0 ? 'not-allowed' : 'pointer';
+    
+    certArrowRight.style.opacity = currentSlide >= maxSlide ? '0.5' : '1';
+    certArrowRight.style.cursor = currentSlide >= maxSlide ? 'not-allowed' : 'pointer';
+}
+
+certArrowLeft.addEventListener('click', () => {
+    if (currentSlide > 0) {
+        currentSlide--;
+        updateSliderPosition();
+    }
+});
+
+certArrowRight.addEventListener('click', () => {
+    if (currentSlide < maxSlide) {
+        currentSlide++;
+        updateSliderPosition();
+    }
+});
+
+// Initialize slider position after DOM is ready
+document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => {
+        updateSliderPosition();
+        adjustVisibleCertifications();
+    }, 100);
+});
+
+// Responsive: adjust visible certifications based on screen width
+function adjustVisibleCertifications() {
+    const container = document.querySelector('.certifications-container');
+    if (!container) return;
+    
+    const containerWidth = container.offsetWidth;
+    const padding = 120; // 60px left + 60px right padding
+    const visibleWidth = containerWidth - padding;
+    
+    const certItems = certificationsGrid.querySelectorAll('.certification-item');
+    if (certItems.length === 0) return;
+    
+    const firstItemWidth = certItems[0].offsetWidth;
+    const gap = 32; // 2rem gap in pixels
+    const itemWithGap = firstItemWidth + gap;
+    
+    const calculatedVisible = Math.floor(visibleWidth / itemWithGap);
+    let newVisible = Math.max(1, Math.min(3, calculatedVisible));
+    
+    if (newVisible !== visibleCertifications) {
+        visibleCertifications = newVisible;
+        maxSlide = Math.max(0, totalCertifications - visibleCertifications);
+        currentSlide = Math.min(currentSlide, maxSlide); // Ensure current slide is within bounds
+        setTimeout(() => updateSliderPosition(), 50);
+    }
+}
+
+window.addEventListener('resize', adjustVisibleCertifications);
 
 /*-----------------------------------------------------*/
 
